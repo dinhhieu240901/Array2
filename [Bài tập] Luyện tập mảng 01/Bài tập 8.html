@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+      Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được
+      sắp xếp.
+    </p>
+    <script>
+          let arr = [];
+          for (let i = 0; i < 10; i++) {
+            let input = prompt("Nhập số nguyên thứ " + (i + 1));
+            let number = parseInt(input);
+            while (isNaN(number)) {
+              input = prompt("Bạn vừa nhập không phải số. Vui lòng nhập lại");
+              number = parseInt(input);
+            }
+            arr.push(number); // Thêm phần tử vào mảng
+          }
+          arr.sort(function(a, b) {
+            return b - a;
+          });
+          document.write("Mảng đã được sắp xếp theo thứ tự giảm dần: " + arr);
+
+        </script>
+        
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ứng dụng vui</title>
+    <style>
+      #nhap-ky-tu {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ứng dụng vui</h1>
+    <textarea
+      id="nhap-ky-tu"
+      rows="4"
+      cols="50"
+      onkeydown="hienThiDongChuCoDinh(event)"
+    ></textarea>
+    <script>
+      var dongChuCoDinh = "Dòng chữ cố định";
+      var index = 0;
+      var textareaElement = document.getElementById("nhap-ky-tu");
+
+      function hienThiDongChuCoDinh(event) {
+        if (index < dongChuCoDinh.length) {
+          var kyTuNhap = String.fromCharCode(event.keyCode);
+          textareaElement.value += kyTuNhap;
+          index++;
+        }
+        event.preventDefault();
+      }
+    </script>
+  </body>
+</html>

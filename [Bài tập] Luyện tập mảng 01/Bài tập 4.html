@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các
+      phần tử trong mảng đó.
+    </p>
+    <script>
+      let arr = [];
+      for (let i = 0; i < 10; i++) {
+        // Ví dụ nhập 5 phần tử, bạn có thể thay đổi số lượng tùy ý
+        let input = +prompt("Nhập số nguyên thứ " + (i + 1));
+        let number = parseInt(input);
+        arr.push(number); // Thêm phần tử vào mảng
+      }
+      document.write("Mảng số = [" + arr + "]<br>");
+      document.write("Mảng số đảo ngược = [" + arr.reverse() + "]<br>");
+    </script>
+  </body>
+</html>

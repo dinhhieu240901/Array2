@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input" name="input" />
+    <input type="button" value="Change" onclick="change()" />
+    <p id="result"></p>
+    <script>
+      function change() {
+        // let input = document.getElementById("input").value;
+        // let result = "";
+        // for (var i = 0; i < input.length; i++) {
+        //   let x1 = input.charAt(i);
+        //   let x2 = input.charAt(i).toUpperCase();
+        //   if (x1 == x2) {
+        //     x1 = x1.toLowerCase();
+        //   } else {
+        //     x1 = x2;
+        //   }
+        //   result += x1;
+        // }
+        // document.getElementById("result").innerHTML = result;
+
+        let input = document.getElementById("input").value;
+        let words = input.split(" ");
+        for (let i = 0; i < words.length; i++) {
+          let word = words[i];
+          let firstChar = word.charAt(0).toLowerCase();
+          let restOfString = word.slice(1).toUpperCase();
+          words[i] = firstChar + restOfString;
+        }
+        let result = words.join(" ");
+        document.getElementById("result").innerHTML = result;
+
+        // let input = document.getElementById("input").value;
+        // let words = input.split(" ");
+        // words = words.map(function (word) {
+        //   return word.charAt(0).toLowerCase() + word.slice(1).toUpperCase();
+        // });
+        // let result = words.join(" ");
+        // document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

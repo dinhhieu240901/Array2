@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình
+      hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần
+      tử đó. Nếu có các số giống nhau, chương trình sẽ chỉ hiển thị số lớn nhất
+      và vị trí của nó. Nếu tất cả các số giống nhau, chương trình sẽ thông báo
+      "Tất cả các số đã nhập giống nhau".
+    </p>
+    <script>
+      let arr = [];
+      let max = -Infinity;
+      let maxIndex = [];
+      let equalNumbers = [];
+
+      for (let i = 0; i < 10; i++) {
+        let input = prompt("Nhập số nguyên thứ " + (i + 1));
+        let number = parseInt(input);
+
+        if (isNaN(number)) {
+          alert("Không phải là số. Vui lòng nhập lại.");
+          i--; // Để nhập lại số khi người dùng nhập không phải số.
+        } else {
+          arr[i] = number;
+
+          if (arr[i] > max) {
+            max = arr[i];
+            maxIndex = [i + 1]; // Đặt lại chỉ một vị trí mới cao hơn
+            equalNumbers = []; // Đặt lại danh sách số giống nhau
+          } else if (arr[i] === max) {
+            maxIndex.push(i + 1); // Thêm vị trí vào danh sách nếu bằng số lớn nhất
+          } else {
+            equalNumbers.push({ i }); // Thêm số giống nhau vào danh sách
+          }
+        }
+      }
+
+      if (equalNumbers.length === 0) {
+        if (maxIndex.length === 10) {
+          alert("Tất cả các số bạn nhập đã giống nhau.");
+        } else {
+          alert("Số lớn nhất là: " + max + " có vị trí " + maxIndex.join(", "));
+        }
+      }
+    </script>
+  </body>
+</html>

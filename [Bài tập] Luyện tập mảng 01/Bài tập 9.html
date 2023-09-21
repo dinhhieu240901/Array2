@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi
+      là mảng a và b. Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
+      Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.
+      Hiển thị mảng c.
+    </p>
+    <script>
+      let mangA = [];
+      let mangB = [];
+      let mangC = [];
+
+      // Nhập mảng a
+      for (let i = 0; i < 10; i++) {
+        let input = prompt("Nhập số nguyên thứ " + (i + 1) + " của mảng a");
+        let number = parseInt(input);
+        while (isNaN(number)) {
+          input = prompt("Bạn vừa nhập không phải số. Vui lòng nhập lại");
+          number = parseInt(input);
+        }
+        mangA.push(number);
+      }
+
+      // Nhập mảng b
+      for (let i = 0; i < 10; i++) {
+        let input = prompt("Nhập số nguyên thứ " + (i + 1) + " của mảng b");
+        let number = parseInt(input);
+        while (isNaN(number)) {
+          input = prompt("Bạn vừa nhập không phải số. Vui lòng nhập lại");
+          number = parseInt(input);
+        }
+        mangB.push(number);
+      }
+
+      // Nối mảng a và b vào mảng c
+      mangC = mangB.concat(mangA);
+
+      // Hiển thị mảng c
+      document.write("Mảng c: " + mangC);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Nhập từ:</div>
+
+    <input type="text" id="word" />
+    <input type="button" value="Tra cứu" onclick="search()" />
+    <p id="result"></p>
+    <script>
+      function search() {
+        let dic = ["cat", "squirrel", "whales", "owl"];
+        let dic2 = ["mèo", "sóc", "cá voi", "cú"];
+        let input = document.getElementById("word").value;
+        let index = dic.indexOf(input);
+        if (index == -1) {
+          alert("Không tìm thấy từ cần tra");
+        } else {
+          document.getElementById("result").innerHTML =
+            "Nghĩa của từ " + input + " là: " + dic2[index];
+        }
+        document.getElementById("word").value = "";
+      }
+    </script>
+  </body>
+</html>

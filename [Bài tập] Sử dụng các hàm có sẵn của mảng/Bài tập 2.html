@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = prompt("Nhập số: ");
+      let result = "";
+
+      for (let i = 0; i < number.length; i++) {
+        if (+number[i] % 2 == 0 && +number[i + 1] % 2 == 0) {
+          result += number[i] + "-";
+        }
+        result += number[i];
+      }
+
+      document.write(result);
+      //   const num = prompt("Nhập chuỗi số:"); // Sử dụng prompt để nhập chuỗi số từ người dùng
+      //   let result = num[0]; // Khởi tạo kết quả với ký tự đầu tiên của chuỗi
+
+      //   for (let i = 1; i < num.length; i++) {
+      //     // Kiểm tra nếu số hiện tại và số trước đó đều là số chẵn
+      //     if (+num[i - 1] % 2 === 0 && +num[i] % 2 === 0) {
+      //       result += "-" + num[i]; // Chèn dấu "-" nếu cả hai số đều chẵn
+      //     } else {
+      //       result += num[i]; // Không chèn dấu "-" nếu không phải số chẵn
+      //     }
+      //   }
+
+      alert(result);
+    </script>
+  </body>
+</html>

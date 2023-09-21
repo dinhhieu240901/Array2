@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự trong mảng
+      là (-) và thay thế các ký tự này bởi ký tự ( _ )
+    </p>
+    <script>
+      let arr = prompt("Nhập mảng ký tự:").split("");
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === "-") {
+          arr[i] = "_";
+        }
+      }
+      let result = arr.join("");
+      alert("Mảng ký tự sau khi thay thế: " + result);
+    </script>
+  </body>
+</html>
+  

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      font-size: 24px;
+      border: 1px solid #ccc;
+    }
+  </style>
+  <body onload="display()">
+    <h2>Caro Game Simple</h2>
+    <table id="caro"></table>
+    <br />
+    <input type="button" onclick="change()" value="Change value" />
+    <script>
+      let b = document.getElementById("caro");
+      let data = "";
+      let count = 0;
+      let board = [];
+      for (let i = 0; i < 5; i++) {
+        board[i] = new Array("(.)", "(.)", "(.)", "(.)", "(.)");
+      }
+
+      function change() {
+        let x = +prompt("Enter row");
+        let y = +prompt("Enter column");
+        count++;
+        if (count % 2 == 1) {
+          board[x][y] = "x";
+        } else {
+          board[x][y] = "o";
+        }
+        display();
+        check();
+      }
+
+      function display() {
+        let e = "<table>";
+        for (let i in board) {
+          e += "<tr>";
+          for (let j in board[i]) {
+            e += "<td>" + board[i][j] + "</td>";
+          }
+          e += "</tr>";
+        }
+        e += "</table>";
+        document.getElementById("caro").innerHTML = e;
+      }
+
+      function check() {
+        for (let i = 0; i < 5; i++) {
+          for (let j = 0; j < 5; j++) {
+            // Kiểm tra chiến thắng theo hàng ngang
+            if (
+              (board[i][j] === "x" &&
+                board[i][j + 1] === "x" &&
+                board[i][j + 2] === "x") ||
+              (board[i][j] === "o" &&
+                board[i][j + 1] === "o" &&
+                board[i][j + 2] === "o")
+            ) {
+              alert("Người chơi chiến thắng!");
+              return;
+            }
+
+            // Kiểm tra chiến thắng theo hàng dọc
+            if (
+              (board[i][j] === "x" &&
+                board[i + 1][j] === "x" &&
+                board[i + 2][j] === "x") ||
+              (board[i][j] === "o" &&
+                board[i + 1][j] === "o" &&
+                board[i + 2][j] === "o")
+            ) {
+              alert("Người chơi chiến thắng!");
+              return;
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
